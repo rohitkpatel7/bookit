@@ -1,0 +1,50 @@
+// prisma/schema.prisma
+generator client {
+  provider = "prisma-client-js"
+  // NOTE: Prisma 6 prints “Generated Prisma Client to .\generated\prisma”.
+  // We’ll import from that path in our code.
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Experience {
+  id          String    @id @default(cuid())
+  title       String
+  location    String
+  imageUrl    String
+  price       Int
+  description String
+  slots       Slot[]
+  bookings    Booking[] // ← add this line
+  createdAt   DateTime  @default(now())
+}
+
+model Slot {
+  id           String     @id @default(cuid())
+  experienceId String
+  date         DateTime
+  capacity     Int
+  bookings     Booking[]
+  Experience   Experience @relation(fields: [experienceId], references: [id])
+
+  @@unique([experienceId, date])
+}
+
+model Booking {
+  id           String     @id @default(cuid())
+  experienceId String
+  slotId       String
+  name         String
+  email        String
+  persons      Int        @default(1)
+  totalPrice   Int
+  status       String     @default("CONFIRMED")
+  createdAt    DateTime   @default(now())
+  Experience   Experience @relation(fields: [experienceId], references: [id])
+  Slot         Slot       @relation(fields: [slotId], references: [id])
+
+  @@unique([email, slotId]) // stop same user from booking the same slot twice
+}

@@ -1,0 +1,10 @@
+{
+  "name": "bookit-root",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently -n API,WEB -c green,cyan \"cd backend && npm run dev\" \"cd frontend && npm run dev\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
