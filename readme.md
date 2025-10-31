@@ -9,8 +9,8 @@ BookIt is a complete end-to-end web application where users can browse experienc
 ## Live Project Links
 (These will be updated after deployment)
 
-Frontend: https://your-frontend-link.vercel.app  
-Backend API: https://your-backend-link.onrender.com  
+Frontend: https://bookit-backend-jp3x.onrender.com 
+Backend API: https://bookit-backend-jp3x.onrender.com 
 
 ---
 
@@ -50,7 +50,7 @@ Deployment:
 
 1. Clone the Repository
 ```bash
-git clone https://github.com/yourusername/bookit.git
+git clone https://github.com/rohitkpatel7/bookit.git
 cd bookit
 Backend Setup
 
@@ -65,7 +65,7 @@ npx prisma generate
 npx prisma migrate dev
 npm run seed
 npm run dev
-Backend will run on http://localhost:4000
+Backend will run on https://bookit-backend-jp3x.onrender.com
 
 Frontend Setup
 
@@ -74,11 +74,11 @@ Copy code
 cd ../frontend
 cp .env.example .env
 # Set the API URL in .env file
-VITE_API_URL="http://localhost:4000"
+VITE_API_URL=https://bookit-backend-jp3x.onrender.com
 
 npm install
 npm run dev
-Frontend will run on http://localhost:5173
+Frontend will run on https://bookit-lac-nu.vercel.app/
 
 API Endpoints
 Method	Endpoint	Description
@@ -97,18 +97,7 @@ Promo validation happens on both frontend and backend.
 All pages are responsive and follow the design shared by Highway Delite.
 
 Developer Information
-Your Name
+Rohit Kumar Patel
 B.Tech Electrical Engineering, Final Year
-Email: your.email@example.com
+Email: kumarr072003@gmail.com , rkpatel07082003@gmail.com
 
-yaml
-Copy code
-
----
-
-### Next step:
-Once you’ve saved this file:
-1. Replace the placeholder links and your personal info.
-2. Then we’ll move to **deployment (Render + Vercel)** so you can fill those live URLs in the README.
-
-Would you like me to start guiding you through **deployment** next?
