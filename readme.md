@@ -9,7 +9,7 @@ BookIt is a complete end-to-end web application where users can browse experienc
 ## Live Project Links
 (These will be updated after deployment)
 
-Frontend: https://bookit-backend-jp3x.onrender.com 
+Frontend: https://bookit-lac-nu.vercel.app/
 Backend API: https://bookit-backend-jp3x.onrender.com 
 
 ---
